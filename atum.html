@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assinatura Digital</title>
+  <link rel="stylesheet" href="css/atum.css" />
+</head>
+<body>
+
+  <main class="app">
+    <section class="card">
+      <div class="topo">
+        <div>
+          <h1>Assinatura Digital</h1>
+          <p>Assine com o dedo na área abaixo.</p>
+        </div>
+
+        <div class="icon">
+          ✍️
+        </div>
+      </div>
+
+      <div class="campo-nome">
+        <label for="nomePessoa">Nome do assinante</label>
+        <input 
+          type="text" 
+          id="nomePessoa" 
+          placeholder="Digite seu nome completo"
+        />
+      </div>
+
+      <div class="assinatura-area">
+        <canvas id="canvasAssinatura"></canvas>
+
+        <div class="linha-assinatura"></div>
+        <span class="texto-linha">Assine aqui</span>
+      </div>
+
+      <div class="botoes">
+        <button class="btn limpar" id="btnLimpar">
+          Limpar
+        </button>
+
+        <button class="btn salvar" id="btnSalvar">
+          Salvar assinatura
+        </button>
+
+        <button class="btn baixar" id="btnBaixar" disabled>
+          Baixar PNG
+        </button>
+      </div>
+
+      <div class="resultado" id="resultado">
+        <h2>Assinatura salva</h2>
+
+        <div class="preview-box">
+          <img id="previewAssinatura" alt="Prévia da assinatura" />
+        </div>
+
+        <p id="nomeSalvo"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/atum.js"></script>
+</body>
+</html>

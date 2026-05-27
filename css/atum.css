@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d8f1ff, #f4fbff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+}
+
+.card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 18px 50px rgba(38, 129, 180, 0.22);
+  border: 1px solid rgba(139, 210, 250, 0.55);
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.topo h1 {
+  color: #146d9e;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.topo p {
+  color: #5e7888;
+  font-size: 14px;
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 18px;
+  background: #d7f2ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  box-shadow: inset 0 0 0 1px #aee5ff;
+}
+
+.campo-nome {
+  margin-bottom: 18px;
+}
+
+.campo-nome label {
+  display: block;
+  color: #226f99;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.campo-nome input {
+  width: 100%;
+  height: 48px;
+  border-radius: 15px;
+  border: 1px solid #aee2fb;
+  padding: 0 15px;
+  outline: none;
+  color: #174d68;
+  background: #f7fcff;
+  font-size: 15px;
+}
+
+.campo-nome input:focus {
+  border-color: #55bce9;
+  box-shadow: 0 0 0 4px rgba(85, 188, 233, 0.15);
+}
+
+.assinatura-area {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  background: #ffffff;
+  border-radius: 22px;
+  border: 2px dashed #8bd4f8;
+  overflow: hidden;
+  box-shadow: inset 0 0 25px rgba(160, 219, 246, 0.18);
+  touch-action: none;
+}
+
+#canvasAssinatura {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+.linha-assinatura {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 62px;
+  height: 2px;
+  background: #b7d7e7;
+  pointer-events: none;
+}
+
+.texto-linha {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #7ca2b5;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn {
+  height: 48px;
+  border: none;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.limpar {
+  background: #eef8ff;
+  color: #2379a5;
+  border: 1px solid #b9e7ff;
+}
+
+.salvar {
+  background: linear-gradient(135deg, #4bbdf1, #179bd6);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(23, 155, 214, 0.28);
+}
+
+.baixar {
+  background: #1e6f9e;
+  color: #ffffff;
+}
+
+.baixar:disabled {
+  background: #9bb8c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.resultado {
+  display: none;
+  margin-top: 22px;
+  animation: aparecer 0.35s ease forwards;
+}
+
+.resultado.ativo {
+  display: block;
+}
+
+.resultado h2 {
+  color: #146d9e;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.preview-box {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #ccecff;
+  padding: 14px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-box img {
+  max-width: 100%;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+#nomeSalvo {
+  margin-top: 10px;
+  color: #496b7d;
+  font-size: 14px;
+  text-align: center;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 520px) {
+  .botoes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .baixar {
+    grid-column: span 2;
+  }
+}
